@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Sync Agents to Global",
+  "description": "Copies any created or updated agent files from .kiro/agents/ to ~/.kiro/agents/ so they are available across all projects",
+  "version": "1",
+  "when": {
+    "type": "fileCreated",
+    "patterns": [
+      ".kiro/agents/*.md"
+    ]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "cp .kiro/agents/*.md ~/.kiro/agents/"
+  }
+}
