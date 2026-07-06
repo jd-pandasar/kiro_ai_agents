@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Sync Agents to Global on Edit",
+      "description": "Copies any created or updated agent files from .kiro/agents/ to ~/.kiro/agents/ so they are available across all projects",
+      "trigger": "PostFileSave",
+      "matcher": "\\.kiro/agents/[^/]*\\.md$",
+      "action": {
+        "type": "command",
+        "command": "cp .kiro/agents/*.md ~/.kiro/agents/"
+      },
+      "enabled": true
+    }
+  ]
+}
